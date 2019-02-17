@@ -2,7 +2,7 @@
 
 Easy to way to make Message or Alert boxes in Spritekit.
 
-<img src="sample.gif" height=400>&nbsp;&nbsp;&nbsp;&nbsp;<img src="sample.gif" height=400>
+<img src="sample.gif" height=400>
 
 # Introduction
 This class is just an SKNode. You add it as you would any other SKNode. There are predefined constants so you can detect which button has been pressed. I made the buttons aligned vertically so that you can put longer button titles if necessary.
