@@ -7,7 +7,7 @@ Easy to way to make Message or Alert boxes in Spritekit.
 # Introduction
 This class is just an SKNode. You add it as you would any other SKNode. There are predefined constants so you can detect which button has been pressed. I made the buttons aligned vertically so that you can put longer button titles if necessary.
 
-#How to Use
+# How to Use
 Copy GCSpriteAlert.h and GCSpriteAlert.m to your project. Then in your header:
 
 ```obj-c
@@ -54,3 +54,12 @@ You can name the alert anything you like, then you can detect the button by touc
 
 ```
 That's all there is to it. I would like to improve it more in future in terms of dismiss animation etc.
+
+# Feedback
+
+If you have questions, give a shout in the Discussion section. If you use this class,
+do send me a link to your app I'd love to see what you created with it.
+
+-GeneCode-
+
+Check out my [XCode Tutorial Blog!](https://xcodenoobies.blogspot.com "XCode Tutorial Blog")
