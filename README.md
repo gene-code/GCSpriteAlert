@@ -53,6 +53,60 @@ You can name the alert anything you like, then you can detect the button by touc
 }
 
 ```
+If you have multiple alerts, you can handle them this way:
+
+```obj-c
+...
+GCSpriteAlert *alert = [[GCSpriteAlert alloc] initWithSize:self.size andParams:dict];
+alert.name = @"Alert1";
+[self addChild:alert];
+
+...
+GCSpriteAlert *alert = [[GCSpriteAlert alloc] initWithSize:self.size andParams:dict];
+alert.name = @"Alert2";
+[self addChild:alert];
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+
+    UITouch *touch = [[touches allObjects] objectAtIndex:0];
+    CGPoint location = [touch locationInNode:self];
+    SKNode *touchedNode = (SKNode *)[self nodeAtPoint:location];
+
+    // handling all alerts here:
+    if ([touchedNode.name isEqualToString:GCSA_BUTTON_INDEX]) {
+
+                SKNode *alertNode = [touchedNode parent];
+                if ([alertNode.name isEqualToString:@"Alert1"]) {
+                    NSNumber *btnIndex = [touchedNode.userData objectForKey:GCSA_BUTTON_INDEX];
+                    if ([btnIndex integerValue]==1) {
+                        // code when button1 is clicked
+                    }
+                    if ([btnIndex integerValue]==0) {
+                      // code when button1 is clicked
+                    }
+                    GCSpriteAlert *alert = (GCSpriteAlert*)[self childNodeWithName:@"Alert1"];
+                    [alert dismissAlert];
+                }
+
+
+                if ([alertNode.name isEqualToString:@"Alert2"]) {
+                    NSNumber *btnIndex = [touchedNode.userData objectForKey:GCSA_BUTTON_INDEX];
+                    if ([btnIndex integerValue]==1) {
+                        // code when button1 is clicked
+                    }
+                    if ([btnIndex integerValue]==0) {
+                      // code when button1 is clicked
+                    }
+                    GCSpriteAlert *alert = (GCSpriteAlert*)[self childNodeWithName:@"Alert2"];
+                    [alert dismissAlert];
+
+                }
+
+            }
+}
+
+```
+
 That's all there is to it. I would like to improve it more in future in terms of dismiss animation etc.
 
 # Feedback
